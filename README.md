@@ -18,7 +18,7 @@ Para ejecutar este proyecto en tu máquina local, necesitas:
 Primero, clona el repositorio en tu máquina local:
 
 ```bash
-git clone https://github.com/tu_usuario/tu_repositorio.git
+git clone https://github.com/Sren94/mercado-libre-scraper-django.git
 
 
 2. Crear un entorno virtual
