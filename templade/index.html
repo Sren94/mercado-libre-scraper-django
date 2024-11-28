@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de Mercado Libre</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+        }
+        .product {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+        .product h3 {
+            margin: 0 0 10px;
+            color: #333;
+        }
+        .product p {
+            margin: 5px 0;
+            color: #777;
+        }
+        .product .price {
+            font-size: 20px;
+            color: #333;
+        }
+        .screenshots img {
+            width: 100%;
+            max-width: 500px;
+            margin: 20px 0;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Resultados de la búsqueda: PlayStation 5</h1>
+
+        <h2>Productos ordenados de mayor a menor precio:</h2>
+
+        {% for producto in productos %}
+        <div class="product">
+            <h3>{{ producto.titulo }}</h3>
+            <p class="price">${{ producto.precio }}</p>
+        </div>
+        {% endfor %}
+
+        <h2>Capturas de Pantalla del Proceso:</h2>
+        <div class="screenshots">
+            <h3>1. Página principal de Mercado Libre</h3>
+            <img src="{% static 'screenshots/step1_home_page.png' %}" alt="Página principal">
+
+            <h3>2. Página de Mercado Libre México</h3>
+            <img src="{% static 'screenshots/step2_mexico_page.png' %}" alt="Página de México">
+
+            <h3>3. Resultados de búsqueda</h3>
+            <img src="{% static 'screenshots/step3_search_results.png' %}" alt="Resultados de búsqueda">
+
+            <h3>4. Banner de Cookies cerrado</h3>
+            <img src="{% static 'screenshots/step4_cookie_banner_closed.png' %}" alt="Banner de cookies cerrado">
+
+            <h3>5. Productos ordenados</h3>
+            <img src="{% static 'screenshots/step5_products.png' %}" alt="Productos ordenados">
+        </div>
+    </div>
+
+</body>
+</html>
